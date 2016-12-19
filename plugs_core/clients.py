@@ -4,7 +4,7 @@ Custom API Client
 from urllib.parse import urlencode
 from rest_framework.test import APIClient
 
-class PLugsAPIClient(APIClient):
+class PlugsAPIClient(APIClient):
     """
     Subclasses APIClient to provide
     custom functionality

@@ -24,7 +24,8 @@ setup(
     'djangorestframework>=3.3.3',
     'djangorestframework-jwt>=1.8.0',
     'requests>=2.2.1',
-    'PyJWT>=1.4.0,<2.0.0'
+    'PyJWT>=1.4.0,<2.0.0',
+    'factory-boy>=2.7.0'
     ],
     classifiers=[
         'Environment :: Web Environment',

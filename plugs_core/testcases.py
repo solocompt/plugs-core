@@ -6,10 +6,17 @@ from rest_framework import status
 from rest_framework.test import APITestCase
 from rest_framework.response import Response
 
-# from post_office.models import Email
+# TODO check this
+# this may not be availabel
+#try:
+#    from post_office.models import Email
+#except ImportError:
+#    do something
 
-from solo.core.testing.clients import PlugsAPIClient
-#from solo.core import utils
+from post_office.models import Email
+
+from plugs_core.clients import PlugsAPIClient
+from plugs_core import utils
 
 def check_response_type(response):
     """
@@ -29,7 +36,7 @@ class PlugsAPITestCase(APITestCase):
     for common use cases
     """
 
-    client_class = SoloAPIClient
+    client_class = PlugsAPIClient
 
     def assertFieldEqual(self, response, field, value):
         """
