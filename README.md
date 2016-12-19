@@ -1,3 +1,0 @@
-# Plugs Core
-
-* Temp...
