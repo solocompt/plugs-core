@@ -1,3 +1,3 @@
-# Plugs Core App
+# Plugs Core
 
-* http://wiki.soloweb.pt/doku.php?id=solo:documentation:webmodules#core
+* Temp...
