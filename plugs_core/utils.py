@@ -129,11 +129,3 @@ def random_string(**kwargs):
     n = kwargs.get('length', 10)
     pool = kwargs.get('pool') or string.digits + string.ascii_lowercase
     return ''.join(random.SystemRandom().choice(pool) for _ in range(n))
-
-def get_authentication_endpoint():
-    """
-    Return a string that represents the
-    endpoint for the authentication model
-    """
-    model = get_user_model()
-    return model._meta.verbose_name_plural._proxy____args[0]
