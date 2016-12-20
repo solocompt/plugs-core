@@ -20,7 +20,7 @@ setup(
     author_email='ricardolobo@soloweb.pt',
     install_requires = [
         'django>=1.9.7',
-        'djangorestframework>=3.3.3',
+        'djangorestframework==3.3.3',
         'djangorestframework-jwt>=1.8.0',
         'requests>=2.2.1',
         'PyJWT>=1.4.0,<2.0.0',
