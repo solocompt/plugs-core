@@ -6,13 +6,10 @@ import re
 import string
 import random
 import logging
-from lxml import html
 
 from django.conf import settings
 from django.apps import apps
-from django.contrib.auth import get_user_model
 from django.core.exceptions import ObjectDoesNotExist
-
 
 LOGGER = logging.getLogger(__name__)
 
@@ -42,6 +39,7 @@ def get_db_distinct(queryset, field, func, **params):
         except ObjectDoesNotExist:
             break
     return value
+
 
 def get_model_class(name):
     """
@@ -78,46 +76,6 @@ def get_non_field_errors_key():
     except AttributeError:
         key = 'non_field_errors'
     return key
-
-
-def html_to_text(html_string):
-    """
-    returns a plain text string when given a html string text
-    handles a, p, h1 to h6 and br, inserts newline chars to
-    create space in the string
-    @todo handle images
-    """
-    # create a valid html document from string
-    # beware that it inserts <hmtl> <body> and <p> tags
-    # where needed
-    html_tree = html.document_fromstring(html_string)
-
-    # handle header tags
-    for h in html_tree.cssselect("h1, h2, h3, h4, h5, h6"):
-        # add two newlines after a header tag
-        h.text = h.text + '\n\n'
-        
-    # handle links
-    # find all a tags starting from the root of the document //
-    # and replace the link with (link)
-    for a in html_tree.xpath("//a"):
-        href = a.attrib['href']
-        a.text = a.text + " (" + href + ")"
-
-    # handle paragraphs
-    for p in html_tree.xpath("//p"):
-        # keep the tail if there is one
-        # or add two newlines after the text if there is no tail
-        p.tail = p.tail if p.tail else "\n\n"
-
-    # handle breaks
-    for br in html_tree.xpath("//br"):
-        # add a newline and then the tail (remaining text after the <br/> tag)
-        # or add a newline only if there is no tail
-        # http://stackoverflow.com/questions/18660382/how-can-i-preserve-br-as-newlines-with-lxml-html-text-content-or-equivalent?rq=1
-        br.tail = "\n" + br.tail if br.tail else "\n"
-        
-    return html_tree.text_content()
 
 
 def random_string(**kwargs):

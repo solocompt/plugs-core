@@ -1,5 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 """
-Testing Serializers
+test_plugs-core
+------------
+
+Tests for `plugs-core` serializers module.
 """
 
 from django.db import models
@@ -12,6 +18,9 @@ class TestModel(models.Model):
     public_field = models.CharField(max_length=100)
     private_field = models.CharField(max_length=100)
 
+    class Meta:
+        app_label = 'api'
+
 
 class TestSerializer(PrivateFieldsModelSerializer):
     class Meta:
@@ -23,7 +32,6 @@ class TestViews(SimpleTestCase):
     """
     Testing Serializers
     """
-
 
     def test_private_fields_model_serializer_with_empty_tuple(self):
         """

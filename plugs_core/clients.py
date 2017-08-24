@@ -1,6 +1,7 @@
 """
 Custom API Client
 """
+
 from urllib.parse import urlencode
 from rest_framework.test import APIClient
 

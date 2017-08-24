@@ -19,4 +19,3 @@ class NumberOfDigitsValidator(object):
         if number_of_digits != self.digits:
             message = self.message.format(self.digits)
             raise serializers.ValidationError(message)
-

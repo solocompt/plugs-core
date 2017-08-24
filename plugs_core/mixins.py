@@ -2,8 +2,6 @@ from django.db import models
 from django.utils.text import slugify
 from django.core.exceptions import ObjectDoesNotExist
 
-from rest_framework.exceptions import ValidationError
-
 class Slugable(models.Model):
 
     slug = models.SlugField(max_length=75, null=False, unique=True)

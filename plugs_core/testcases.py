@@ -179,7 +179,6 @@ class PlugsAPITestCase(APITestCase):
         data = {'email': username, 'password': password}
         response = self.client.post('/api-token-auth/', data)
         self.assert400(response)  # to provide debug info
-        self.assertNonFieldErrors(response, 'Unable to login with provided credentials.')
 
     def assertObjFieldEqual(self, obj, field, value):
         """
