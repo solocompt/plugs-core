@@ -70,14 +70,10 @@ setup(
     keywords='plugs-core',
     classifiers=[
         'Development Status :: 3 - Alpha',
-        'Environment :: Web Environment',
-        'Framework :: Django',
         'Framework :: Django :: 1.11',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: BSD License',
-        'Operating System :: OS Independent',
-        'Programming Language :: Python :: 3',
-        'Topic :: Internet :: WWW/HTTP',
-        'Topic :: Internet :: WWW/HTTP :: Dynamic Content'
+        'License :: OSI Approved :: MIT License',
+        'Natural Language :: English',
+        'Programming Language :: Python :: 3'
     ],
 )
