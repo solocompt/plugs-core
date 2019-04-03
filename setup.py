@@ -57,12 +57,12 @@ setup(
     ],
     include_package_data=True,
     install_requires=[
-        'django>=1.11.4,<2.0.0',
-        'djangorestframework>=3.6.4,<4.0.0',
-        'djangorestframework-jwt>=1.8.0,<2.0.0',
-        'requests>=2.2.1',
-        'PyJWT>=1.4.0,<2.0.0',
-        'factory-boy>=2.7.0',
+        'django',
+        'djangorestframework',
+        'djangorestframework-jwt',
+        'requests',
+        'PyJWT',
+        'factory-boy',
         'lxml'
     ],
     license="MIT",
